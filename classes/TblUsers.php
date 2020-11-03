@@ -37,7 +37,6 @@ class TblUsers
         $result = $this->connect()->get('users', '*', [
             "email" => $email
         ]);
-        var_dump($result['id']);
         $access = password_verify($password, $result["password"]);
         return $access;
     }
